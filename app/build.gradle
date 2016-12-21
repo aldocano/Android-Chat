@@ -1,10 +1,21 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 repositories {
     mavenLocal()
     flatDir {
         dirs 'libs'
     }
+    maven { url 'https://maven.fabric.io/public' }
 }
 
 android {
@@ -37,10 +48,20 @@ dependencies {
 
     compile 'com.android.support:design:24.2.0'
     compile 'com.android.support:appcompat-v7:24.2.0'
+
+    //Firebase
     compile 'com.google.firebase:firebase-database:10.0.1'
+    compile 'com.firebaseui:firebase-ui-auth:1.0.1'
+    compile 'com.google.firebase:firebase-auth:10.0.1'
+    compile 'com.google.firebase:firebase-storage:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-config:10.0.1'
 
     // Displaying images
     compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile('com.twitter.sdk.android:twitter:2.3.0@aar') {
+        transitive = true;
+    }
 }
 
 apply plugin: 'com.google.gms.google-services'
