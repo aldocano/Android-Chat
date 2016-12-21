@@ -27,6 +27,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        tools:text="Name" />
+        tools:text="Name"
+        android:textAlignment="textStart"
+        android:layout_gravity="right"
+        android:paddingRight="5dp"
+        android:layout_marginRight="10dp"
+        android:textStyle="normal|bold" />
 
 </LinearLayout>
